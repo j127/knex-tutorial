@@ -1,7 +1,12 @@
 module.exports = {
     development: {
         client: 'pg',
-        connection: 'postgres://localhost/todos_test',
+        connection: {
+            host: '127.0.0.1',
+            user: process.env.TODO_DB_USER,
+            password: process.env.TODO_DB_PW,
+            database: 'todos_test'
+        },
         migrations: {
             directory: __dirname + '/db/migrations',
         },
