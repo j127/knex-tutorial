@@ -1,0 +1,19 @@
+{
+  "name": "@j127/knex-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "knexfile.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "knex": "^0.13.0",
+    "pg": "^7.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "J. Cohen <hostelmarketing@gmail.com> (https://github.com/j127)",
+  "license": "UNLICENSED"
+}
