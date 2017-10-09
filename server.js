@@ -35,8 +35,8 @@ app.post('/todos', (req, res) => {
         title: req.body.title,
         user_id: req.body.user_id
     }).then((todos) => {
-            res.send(todos);
-        });
+        res.send(todos);
+    });
 });
 
 app.put('/todos/:id', (req, res) => {
