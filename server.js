@@ -67,6 +67,15 @@ app.delete('/todos/:id', (req, res) => {
         });
 });
 
+app.get('/users/:id/todos', (req, res) => {
+    knex.from('todos')
+        .innerJoin('users', 'todos.user_id', 'users.id')
+        .where('todos.user_id', req.params.id)
+        .then(data => {
+            res.send(data);
+        });
+});
+
 app.listen(port, () => {
     console.log('listening on port: ', port);
 });

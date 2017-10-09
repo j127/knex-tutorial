@@ -41,3 +41,7 @@ Update a todo:
 Delete a todo:
 
     $ curl -XDELETE http://localhost:8000/todos/1 
+
+Get todos for a given user ID:
+
+    $ curl http://localhost:8000/users/1/todos 
