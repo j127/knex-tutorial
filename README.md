@@ -3,7 +3,6 @@
 I followed this tutorial on YouTube: https://www.youtube.com/playlist?list=PL7sCSgsRZ-smPRSrim4bX5TQfRue1jKfw
 
 * `npm i`
-* 
 
 ## Migrations
 

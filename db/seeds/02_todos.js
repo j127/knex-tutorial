@@ -1,5 +1,3 @@
-const knex = require('knex');
-
 exports.seed = (knex, Promise) => {
     // Deletes ALL existing entries
     return knex('todos').del()
@@ -18,3 +16,4 @@ exports.seed = (knex, Promise) => {
                   user_id: 3 },
             ]);
         });
+};
