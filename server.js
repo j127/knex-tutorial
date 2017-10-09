@@ -27,6 +27,15 @@ app.get('/todos/1', (req, res) => {
     });
 });
 
+app.post('/todos', (req, res) => {
+    knex('todos').insert({
+        title: 'drink more water',
+        user_id: 1
+    }).then(() => {
+            res.send(todos);
+        });
+});
+
 app.listen(port, () => {
     console.log('listening on port: ', port);
 });

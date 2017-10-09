@@ -15,8 +15,13 @@ I followed this tutorial on YouTube: https://www.youtube.com/playlist?list=PL7sC
 
 ## Seeds
 
+This creates the seed files:
+
+    # WARNING: THIS WILL OVERWRITE THOSE FILES!
     $ knex seed:make 01_users
-    $ knex seed:make 01_todos
+    $ knex seed:make 02_todos
+
+This runs the seed files:
 
     $ knex seed:run
 
