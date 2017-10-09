@@ -24,3 +24,8 @@ This runs the seed files:
 
     $ knex seed:run
 
+## Try It
+
+    $ curl -XPOST http://localhost:8000/todos -d 'title=a%20new%20todo&user_id=1'
+
+    $ curl -XPUT http://localhost:8000/todos/1 -d 'title=saluton%20mondo!&completed=true'

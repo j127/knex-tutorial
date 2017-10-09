@@ -20,19 +20,38 @@ app.get('/todos', (req, res) => {
     });
 });
 
-app.get('/todos/1', (req, res) => {
-    knex.select().from('todos').where('id', 1)
-    .then(todo => {
-        res.send(todo); // also an array
-    });
+app.get('/todos/:id', (req, res) => {
+    knex.select()
+        .from('todos')
+        .where('id', req.params.id)
+        .then(todo => {
+            res.send(todo); // also an array
+        });
 });
 
 app.post('/todos', (req, res) => {
+    console.log('req.body', req.body);
     knex('todos').insert({
-        title: 'drink more water',
-        user_id: 1
-    }).then(() => {
+        title: req.body.title,
+        user_id: req.body.user_id
+    }).then((todos) => {
             res.send(todos);
+        });
+});
+
+app.put('/todos/:id', (req, res) => {
+    console.log('req.body', req.body);
+    knex('todos').where('id', req.params.id)
+        .update({
+            title: req.body.title,
+            completed: req.body.completed
+        })
+        .then(() => {
+            knex.select()
+                .from('todos')
+                .then(todos => {
+                    res.send(todos);
+                });
         });
 });
 
