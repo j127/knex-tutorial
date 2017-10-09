@@ -26,6 +26,18 @@ This runs the seed files:
 
 ## Try It
 
+Get all todos:
+
+    $ curl http://localhost:8000/todos
+
+Add a todo:
+
     $ curl -XPOST http://localhost:8000/todos -d 'title=a%20new%20todo&user_id=1'
 
+Update a todo:
+
     $ curl -XPUT http://localhost:8000/todos/1 -d 'title=saluton%20mondo!&completed=true'
+
+Delete a todo:
+
+    $ curl -XDELETE http://localhost:8000/todos/1 

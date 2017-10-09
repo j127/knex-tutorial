@@ -55,6 +55,18 @@ app.put('/todos/:id', (req, res) => {
         });
 });
 
+app.delete('/todos/:id', (req, res) => {
+    knex('todos').where('id', req.params.id)
+        .del()
+        .then((todos) => {
+            knex.select()
+                .from('todos')
+                .then(todos => {
+                    res.send(todos);
+                });
+        });
+});
+
 app.listen(port, () => {
     console.log('listening on port: ', port);
 });
